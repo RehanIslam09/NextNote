@@ -23,7 +23,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -40,11 +40,12 @@ export function ResetPasswordForm({
   ...props
 }: React.ComponentProps<"div">) {
   const router = useRouter();
-
   const searchParams = useSearchParams();
-  const token = searchParams.get("token");
 
+  const [token, setToken] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,6 +53,32 @@ export function ResetPasswordForm({
       confirmPassword: "",
     },
   });
+
+  useEffect(() => {
+    setMounted(true);
+    setToken(searchParams.get("token"));
+  }, [searchParams]);
+
+  // Show loading state until component is mounted
+  if (!mounted) {
+    return (
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Reset your password</CardTitle>
+            <CardDescription>
+              Loading reset form...
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex justify-center p-8">
+              <Loader2 className="size-6 animate-spin" />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
