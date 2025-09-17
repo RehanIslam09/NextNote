@@ -74,6 +74,9 @@ importers:
       '@tiptap/extension-text-style':
         specifier: ^3.4.0
         version: 3.4.3(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
+      '@tiptap/extension-underline':
+        specifier: ^3.4.0
+        version: 3.4.4(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
       '@tiptap/pm':
         specifier: ^3.0.9
         version: 3.0.9
@@ -1575,10 +1578,10 @@ packages:
     peerDependencies:
       '@tiptap/core': ^3.0.9
 
-  '@tiptap/extension-underline@3.0.9':
-    resolution: {integrity: sha512-xLR5NbnxlEJmvfb4Aj8wCbTmh/ycnPsSDeP8+TAsdAYxypSA6BP6G0t4d4NWreqAq+tq6QV6Eh0+YDN0G1VZxw==}
+  '@tiptap/extension-underline@3.4.4':
+    resolution: {integrity: sha512-+9lJLt2ijDL9XCZmD5PuU38tuaGRREcQpaMLSjKvFQxVz7SqnRndVmNqNPgk4h9T2C0t1A5wnci6gqGE9XLMDw==}
     peerDependencies:
-      '@tiptap/core': ^3.0.9
+      '@tiptap/core': ^3.4.4
 
   '@tiptap/extensions@3.0.9':
     resolution: {integrity: sha512-IyTcPnZXUf0nxDkC+CCWh10vzn81Kq50euV/ivk8IyPr15hxPiT3Zk1LmCI10Pqf4Bwgz38XUIWtToDfIeEgpg==}
@@ -4694,7 +4697,7 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.0.9(@tiptap/pm@3.0.9)
 
-  '@tiptap/extension-underline@3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))':
+  '@tiptap/extension-underline@3.4.4(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))':
     dependencies:
       '@tiptap/core': 3.0.9(@tiptap/pm@3.0.9)
 
@@ -4762,7 +4765,7 @@ snapshots:
       '@tiptap/extension-paragraph': 3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
       '@tiptap/extension-strike': 3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
       '@tiptap/extension-text': 3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
-      '@tiptap/extension-underline': 3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
+      '@tiptap/extension-underline': 3.4.4(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))
       '@tiptap/extensions': 3.0.9(@tiptap/core@3.0.9(@tiptap/pm@3.0.9))(@tiptap/pm@3.0.9)
       '@tiptap/pm': 3.0.9
 
